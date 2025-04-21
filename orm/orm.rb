@@ -39,8 +39,8 @@ module ORM
         module MetodosClass
             def todos
 
-                self.class_variable_set(:@nome_tabela) 
-                tabela = self.class_variable_get(:@nome_tabela)
+                self.class_variable_set(:@@nome_tabela, @nome_tabela)
+                tabela = self.class_variable_get(:@@nome_tabela)
                 
                 
                 dados = Infra::Db.new.execute("SELECT * FROM #{tabela}", [])

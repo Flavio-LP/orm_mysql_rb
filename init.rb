@@ -9,7 +9,6 @@ require 'terminal-table'
 
 #cliente = Models::Cliente.new
 
-=begin
 
 clientes = Models::Cliente.todos
 
@@ -25,18 +24,18 @@ table = Terminal::Table.new(
 )
 
 puts table
-=end
+
 
 
 fornecedores = Models::Fornecedor.todos
 
 
-rows = fornecedores.map do |cliente|
-   [fornecedores.id, fornecedores.nome, fornecedores.telefone, fornecedores.cnpj]
+rows = fornecedores.map do |fornecedores|
+   [fornecedores.id, fornecedores.nome, fornecedores.telefone, fornecedores.cnpj, fornecedores.endereco ]
 end
 
 table = Terminal::Table.new(
-    :headings => ['ID', 'Nome', 'Telefone', 'cnpj'],
+    :headings => ['id', 'Nome', 'Telefone', 'cnpj','endereco'],
     :rows => rows
     
 )
